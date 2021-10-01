@@ -82,7 +82,7 @@ For the model that rated the progression of dementia in patients, we started by 
 Here is a comparison of accuracy and recall scores between the models:
 
 
-<img src='./support/Accuracy_comp.png'>
+<img src='./support/Acc.png'>
 
 <img src='./support/Recall_comp.png'>
 
