@@ -22,7 +22,7 @@ You are a data science team that has been tasked by the UK government to develop
 
 Alzheimer's disease is the most common influencer of dementia, as 62% of dementia cases are explained by the onset of Alzheimer's. The difference between the two diseases is shown below.
 
-<img src='./support/vs.png'>
+<img src='./support/vs.jpg'>
 
 The early diagnosis of both these conditions can greatly influence outcomes as treatment is available earlier, improving quality of life on behalf of patients, and reducing the overall impact of dementia on the economy, as care costs are lower and patients can continue working for longer.
 
