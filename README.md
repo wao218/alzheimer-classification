@@ -53,6 +53,26 @@ The data consists of 6,400 MRI images. The data has four classes of images that 
 
 ## Methods and Modeling
 
+#### Diagnosis Model
+
+We began our modeling with the goal of being able to accurately being able to predict Alzheimer’s in a patient.
+
+For the diagnosis model, the goal was to deliver the simplest model that did better than the benchmark metrics outlined in the problem statement. The majority of hospital computers aren’t very powerful, so we wanted a model that would work in an environment with little resources. 
+
+This would be very important when it came to model retraining. With just 1,000 nodes in the first hidden layer, we were able to achieve this goal. Because the model didn’t take a lot of time to train, we then focused on increasing complexity of the model so that it is more accurate while still making sure that there wasn’t a large trade off between model complexity and training time. At 8,000 nodes, the model started to significantly take longer to train so we stopped here.
+
+We started with standardizing the data using the Min-Max method. From a layers standpoint, we flattened our data and then used dropout. Binary Cross Entropy was our loss function, as it was a binary classification problem.
+
+Our model’s final scoring sat at:
+
+Accuracy: 85%   
+Precision: 87%
+Recall: 85%
+
+
+#### Model Predicting Severity Of Dementia
+
+For the model that rated the progression of dementia in patients, we started by creating a base model to compare our other models. The design for this model was inspired by a model found in the book “Deep Learning with Python” by Francois Chollet. We then used 2 pertained models, InceptionV3 and MobileNetV3, to compare to our base model and they offered a worse performance.
 
 
 
@@ -60,3 +80,41 @@ The data consists of 6,400 MRI images. The data has four classes of images that 
 
 ## Conclusions and Recommendations
 
+#### Conclusions
+
+To conclude, our predictive models have improved diagnostics compared to baseline predictions, with accuracy and recall scores that are higher than baseline scores to varying degrees. 
+
+Seen below is a summary of our baseline metrics and chosen models:
+
+![](../support/Results.jpg)
+
+Our most basic neural net (for binary classification) is 35 points above baseline accuracy (50%), and in terms of recall scores is 20 points above UK averages (64%). However, the recall scoring as it related to false negatives (128 false negatives in our model results) was significantly higher than what would be comfortable for a model that has been deployed within hospitals. This is primarily because the liability a hospital could incur and the delayed care a patient could receive in the event of a missed diagnosis.
+
+In terms of classifying the severity of symptoms, we chose the basic tuned model over pre-trained models, and scored a uniform score of 72% on accuracy, precision, and recall. This metric is also below what we would be comfortable with for a model that is deployed in UK hospitals, but is also higher than baseline predictions.
+
+Our models, with additional improvement and feature development before deployment, will improve the detection rate of dementia in UK hospitals and help determine the severity of a patient's dementia.
+
+#### Recommendations
+
+Below are our stated recommendations
+
+- Fine-tune InceptionV3 and MobileNetV3 models to update weights to be specific to the MRI Images. Potential to improve scores more.
+
+    - 
+
+- Augment the data differently and see how that impacts the models (minimize shear and distortions, sharpening, changing contrast)
+
+    -
+
+- Integrate within existing image record data at select hospitals to begin testing over larger sets of image data.
+
+    - Being able to integrate into existing image record data at hospitals will allow us to test out a greater sample of image scans, and test our model in an industry environment.
+
+- We could use higher resolution images with more detail for our models to train with
+
+- Develop the program to be hosted on a local machine
+
+    - Given the extensive computational resources of our neural net, the model is currently unable to be hosted on local machines. An app that can run our model feasibly on one will enable hospital staff have greater access to these predictive models in their dealings with patients.
+    
+- Try to use other patient data to try and predict dementia
+- General Wellness Survey
