@@ -45,10 +45,10 @@ The data is a random sampling of brain scans, initially collected from various w
 
 The data consists of 6,400 MRI images. The data has four classes of images that show severity, classified both in a training set as well as a testing set:
 
-Mild Demented
-Moderate Demented
-Non Demented
-Very Mild Demented
+- Mild Demented
+- Moderate Demented
+- Non Demented
+- Very Mild Demented
 
 
 ## Methods and Modeling
