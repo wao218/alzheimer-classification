@@ -2,6 +2,17 @@
 
 # Project 5: Predicting Dementia
 
+---
+
+#### To Run Code Files:
+
+**Instructions for running Colab notebooks (Notebooks #02-06 & 08):**
+- Copy notebooks to Colab.
+- Copy data folder to Google Drive and put the data folder in root MyDrive folder
+- Run notebooks and follow directions of first cell to connect to Google Drive account
+
+---
+
 ## Problem Statement
 
 You are a data science team that has been tasked by the UK government to develop a diagnostic solution that can improve the prediction rates of dementia and Alzheimer's within UK hospitals.  Using a Convolutional Neural Network on brain scan imaging, our group wishes to predict Alzheimer's disease with at least 50% accuracy and a recall of at least 64%. This metric is benchmarked to the average diagnostic performance of hospitals across the UK for patients, and an improvement in detection here can mean better outcomes and care for those within its early stages.
@@ -11,7 +22,7 @@ You are a data science team that has been tasked by the UK government to develop
 
 Alzheimer's disease is the most common influencer of dementia, as 62% of dementia cases are explained by the onset of Alzheimer's. The difference between the two diseases is shown below.
 
-<img src='./support/Results.png'>
+<img src='./support/vs.png'>
 
 The early diagnosis of both these conditions can greatly influence outcomes as treatment is available earlier, improving quality of life on behalf of patients, and reducing the overall impact of dementia on the economy, as care costs are lower and patients can continue working for longer.
 
