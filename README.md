@@ -11,7 +11,7 @@ You are a data science team that has been tasked by the UK government to develop
 
 Alzheimer's disease is the most common influencer of dementia, as 62% of dementia cases are explained by the onset of Alzheimer's. The difference between the two diseases is shown below.
 
-![](../support/vs.jpg)
+<img src='./support/Results.png'>
 
 The early diagnosis of both these conditions can greatly influence outcomes as treatment is available earlier, improving quality of life on behalf of patients, and reducing the overall impact of dementia on the economy, as care costs are lower and patients can continue working for longer.
 
@@ -69,13 +69,33 @@ Accuracy: 85%
 Precision: 87%
 Recall: 85%
 
+Our chosen model's layer layout and tuning are below:
+
+<img src='./support/Model_1_Layers.png'>
+
 
 #### Model Predicting Severity Of Dementia
 
-For the model that rated the progression of dementia in patients, we started by creating a base model to compare our other models. The design for this model was inspired by a model found in the book “Deep Learning with Python” by Francois Chollet. We then used 2 pertained models, InceptionV3 and MobileNetV3, to compare to our base model and they offered a worse performance.
+For the model that rated the progression of dementia in patients, we started by creating a base model to compare our other models. The design for this model was inspired by a model found in the book “Deep Learning with Python” by Francois Chollet. We then used 2 pre-trained models, InceptionV3 and MobileNetV3, to compare to our base model and see if they offered a better performance.
 
 
+Here is a comparison of accuracy and recall scores between the models:
 
+
+<img src='./support/Acc.png'>
+
+<img src='./support/Recall_comp.png'>
+
+
+In terms of model performance, our Basic CNN model outperformed the other models in terms of recall scoring (72%), and had the best overall accuracy (72%). Additionally, we tested the model with more data augmentation,but the model performed worse than non-augmented data.
+
+With our InceptionV3 model, our accuracy, precision, and recall were 56%, 60%, and 40% respectively.
+
+Our MobileNetV3 Model showed the most volatility of the three in terms of accuracy predictions, scoring 56%, 73%, and 21% for accuracy, precision, and recall.
+
+Below is the model layout of our chosen model's nodes and tuning:
+
+<img src='./support/Model_2_Layers.png'>
 
 
 ## Conclusions and Recommendations
@@ -86,7 +106,7 @@ To conclude, our predictive models have improved diagnostics compared to baselin
 
 Seen below is a summary of our baseline metrics and chosen models:
 
-![](../support/Results.jpg)
+<img src='./support/Results.png'>
 
 Our most basic neural net (for binary classification) is 35 points above baseline accuracy (50%), and in terms of recall scores is 20 points above UK averages (64%). However, the recall scoring as it related to false negatives (128 false negatives in our model results) was significantly higher than what would be comfortable for a model that has been deployed within hospitals. This is primarily because the liability a hospital could incur and the delayed care a patient could receive in the event of a missed diagnosis.
 
@@ -118,3 +138,4 @@ Below are our stated recommendations
     
 - Try to use other patient data to try and predict dementia
 - General Wellness Survey
+
