@@ -24,7 +24,7 @@ Alzheimer's disease is the most common influencer of dementia, as 62% of dementi
 
 <img src='./support/vs.jpg'>
 
-The early diagnosis of both these conditions can greatly influence outcomes as treatment is available earlier, improving quality of life on behalf of patients, and reducing the overall impact of dementia on the economy, as care costs are lower and patients can continue working for longer.
+The early diagnosis of both these conditions can greatly influence outcomes as treatment is available earlier, improving quality of life on behalf of patients, and reducing the overall impact of dementia on the economy, as care costs are lower and patients can continue working for longer. The impact of this both economically and socially cannot be understated.
 
 In the United Kingdom, healthcare entities are instrumental in the recognition of dementia in the community. However, data suggests that current diagnostic effectiveness in the UK is less than ideal, and in a position to be improved. In 2018, Alzheimer's Research UK indicated that the diagnosis of dementia was only 67% effective ([*Source*](https://www.dementiastatistics.org/statistics/diagnoses-in-the-uk/)), suggesting that a third of patients did not receive a correct diagnosis. In individual healthcare systems in the UK, the range on this diagnosis varies anywhere from 54% to 80% ([*Source*](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6935598/)), as privacy policies and a lack of communication between systems can limit a practitioner's ability to fully evaluate a patient. 
 
@@ -76,9 +76,9 @@ We started with standardizing the data using the Min-Max method. From a layers s
 
 Our model’s final scoring sat at:
 
-Accuracy: 85%   
-Precision: 87%
-Recall: 85%
+- Accuracy: 85%   
+- Precision: 87%
+- Recall: 85%
 
 Our chosen model's layer layout and tuning are below:
 
@@ -119,7 +119,7 @@ Seen below is a summary of our baseline metrics and chosen models:
 
 <img src='./support/Results.png'>
 
-Our most basic neural net (for binary classification) is 35 points above baseline accuracy (50%), and in terms of recall scores is 20 points above UK averages (64%). However, the recall scoring as it related to false negatives (128 false negatives in our model results) was significantly higher than what would be comfortable for a model that has been deployed within hospitals. This is primarily because the liability a hospital could incur and the delayed care a patient could receive in the event of a missed diagnosis.
+Our most basic neural net (for binary classification) is 37 points above baseline accuracy (50%), and in terms of recall scores is 23 points above UK averages (64%). However, the recall scoring as it related to false negatives (128 false negatives in our model results) was significantly higher than what would be comfortable for a model that has been deployed within hospitals. This is primarily because the liability a hospital could incur and the delayed care a patient could receive in the event of a missed diagnosis.
 
 In terms of classifying the severity of symptoms, we chose the basic tuned model over pre-trained models, and scored a uniform score of 72% on accuracy, precision, and recall. This metric is also below what we would be comfortable with for a model that is deployed in UK hospitals, but is also higher than baseline predictions.
 
@@ -127,26 +127,24 @@ Our models, with additional improvement and feature development before deploymen
 
 #### Recommendations
 
-Below are our stated recommendations
+Below are our stated recommendations:
 
 - Fine-tune InceptionV3 and MobileNetV3 models to update weights to be specific to the MRI Images. Potential to improve scores more.
 
-    - 
 
-- Augment the data differently and see how that impacts the models (minimize shear and distortions, sharpening, changing contrast)
+- Augment the data differently and see how that impacts the models (minimize shear and distortions, sharpening, changing contrast).
 
-    -
+    - Improving the image quality on the data will lead to higher recognition scores, as there is less noise to throw the models off.
 
 - Integrate within existing image record data at select hospitals to begin testing over larger sets of image data.
 
     - Being able to integrate into existing image record data at hospitals will allow us to test out a greater sample of image scans, and test our model in an industry environment.
 
-- We could use higher resolution images with more detail for our models to train with
-
-- Develop the program to be hosted on a local machine
+- Develop the program to be hosted on a local machine.
 
     - Given the extensive computational resources of our neural net, the model is currently unable to be hosted on local machines. An app that can run our model feasibly on one will enable hospital staff have greater access to these predictive models in their dealings with patients.
     
-- Try to use other patient data to try and predict dementia
-- General Wellness Survey
+- Try to use other patient data to try and predict dementia.
+
+    - Qualitative data in addition to our modeling can help improve diagnosis at a patient level
 
